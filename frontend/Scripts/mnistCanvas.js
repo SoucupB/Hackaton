@@ -63,6 +63,7 @@ function executeCode() {
     var newUrl = "http://localhost:5000/execute.json";
     var value = document.getElementById("txtarea").value.split("\n")
     console.log(value)
+    document.getElementById("output").innerHTML = "Waiting!!";
     httpPost(newUrl, 'json', {"code": value}, function(response) {
         var resp = "";
         for(var i = 0; i < response["response"].length; i++) {
