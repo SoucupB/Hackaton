@@ -1,0 +1,113 @@
+.dropdown-submenu {
+    position: relative;
+  }
+
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px 16px;;
+  }
+
+  .button2 {background-color: #008CBA;}
+  .button3 {background-color: #f44336;}
+  .button4 {background-color: #e7e7e7; color: black;}
+  .button5 {background-color: #555555;}
+  .button:hover {
+    background-color: grey;
+    color: black;
+  }
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  .cnve canvas{
+    float:left;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  textarea {
+    resize: none;
+  }
+  div.txtarea[contenteditable=true] {
+    -webkit-appearance: textarea;
+    width: 700px;
+    height: 300px;
+    position: relative;
+    bottom: 980px;
+    white-space: pre-line;
+    white-space: pre-wrap;
+    overflow: auto;
+
+  }
+
+  div.txtarea[contenteditable=true] {
+    -webkit-appearance: textarea;
+    width: 700px;
+    height: 300px;
+    position: relative;
+    left: -60px;
+    bottom: 0px;
+    top: 0px;
+    white-space: pre-line;
+    white-space: pre-wrap;
+    overflow: auto;
+  }
+
+  #textarea {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    font: medium -moz-fixed;
+    font: -webkit-small-control;
+    height: 200px;
+    overflow: auto;
+    padding: 2px;
+    resize: both;
+    width: 400px;
+    }
+
+  pre {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #f36d33;
+    color: #666;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
+
+

@@ -1,0 +1,111 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="test_area_style.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="styles/default.css">
+    </head>
+    <body>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.4.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <title>Artificial Intelligence</title>
+        <script src="Scripts/mnistCanvas.js"></script>
+        <script type="module" src="Scripts/syntaxHighLight.js"></script>
+        <link rel="stylesheet" type="text/css" href="scripts/Styles/sidebar.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="insertion-box" class="jumbotron">
+              <h1>Presentation</h1>
+              <p class="lead">
+                  Artificial Intelligence is the hot topic for the past 5 years in artificial intelligence with its breakthrough in
+                  image, voice recognition and a lot of other subjects such as game Bots development. As it is now a lot of programmers, begginers or advanced are starting
+                  to get into this subject because its very COOL. Ofcourse, when we think about artificial intelligence we generally think about <span style="color:Green;">Neural Networks</span> and
+                  <span style="color:Green;">Python</span> since it is an easy scripting language.Unfortunatelly there are some obstacles in the learning process
+                  of this topic because installing and using the existing librarys its not quite for begginers and some of the potential AI creators will drop this topic
+                  before they could even begin.
+              </p>
+              <p class="lead">
+                <a class="btn btn-info btn-lg" href="https://en.wikipedia.org/wiki/Neural_network" role="button">More information</a>
+              </p>
+              <hr />
+              <h1>Solutions</h1>
+              <p class="lead">
+                  Today I come up with a solution that should solve the problem of getting into this subject more easily with this 'light' library specifically designed
+                  for the purpose of learning and also for the development of small applications using the Neural Network.
+                  But what does light means? well it means that the library can be installed very easily with just one command and can be used to solve easy as well as hard problems.
+              </p>
+              <h1>Examples</h1>
+              <p class="lead">
+                  There are 2 problems which are mandatory for every machine learning engineer. This problems are the XOR problem where the structure should
+                  learn how to mimic the XOR binary function(The hello world for machine learning!) and the digits recognition problem which is training a neural Network
+                  to recognize handwritten digits.
+              </p>
+              <hr />
+              <p class="lead">
+                Here is the code for digits training the digits recognition algorithm.
+              </p>
+              <pre>
+                <code class="python">
+import NeuralNetwork as nn #import the library
+import FileReader as fr
+images = fr.GetImageData() #get mnist data which are just the digits images formatted to binary
+labels = fr.GetLabels() #get the labels for each image
+imageHeight = 28
+imageWidth = 28
+epochs = 20
+net = nn.NeuralNetwork([imageHeight * imageWidth, 51, 10], 0.2, [nn.RELU, nn.SIGMOID])
+for i in range(20):
+    print(i, net.sgdLong(images[:(50 * (i + 1))], labels[:(50 * (i + 1))], 10, nn.OPT_SGD))
+net.save_weights()
+print(net.feed_forward(images[4]))
+print(labels[4])
+                </code>
+              </pre>
+              <hr />
+              <p class="lead">
+                  Test it, draw a digit with the currently best network!
+              </p>
+              <button class="button button3" onclick="return start_debugg()">Guess</button>
+              <button class="button button3" onclick="return changeBG()">Clear</button>
+              <div id = 'ExampleBox'></div>
+              <p id = 'resp' class="lead">
+              </p>
+              <h1>Testing section</h1>
+              <p class="lead">
+                  Before you decide to actually get the library, maybe its better to test it before taking any action.
+                  In this section you can test the library with different problems.
+              </p>
+              <hr />
+              <button class="button button3" onclick="return executeCode()">Run Code</button>
+              <p></p>
+              <textarea rows="20" cols="120" id = 'txtarea'>
+import NeuralNetwork as nn
+network = nn.NeuralNetwork([2, 4, 1], 0.1, [nn.RELU, nn.SIGMOID])
+for index in range(5000):
+    sr = [[0, 0], [0, 1], [1, 0], [1, 1]]
+    pl = [[0], [1], [1], [0]]
+    for i in range(len(sr)):
+        network.sgd(sr[i], pl[i], nn.OPT_SGD)
+inputs = [[1, 1], [1, 0], [0, 1], [0, 0]]
+outputs = [0, 1, 1, 0]
+for index in range(len(inputs)):
+    print("For input", inputs[index], "response is", network.feed_forward(inputs[index])[0])
+              </textarea>
+              <p class="lead">
+                Execution output!
+              </p>
+              <textarea rows="5" cols="120" id = 'output'>
+
+              </textarea>
+            </div>
+        </div>
+
+    </body>
+</html>
