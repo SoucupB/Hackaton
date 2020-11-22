@@ -1,1 +1,4 @@
 # Hackaton
+
+Coders:
+Bogdan Soucup.
