@@ -55,8 +55,9 @@ def runMnistData():
     newImg = fr.createImageFromArray(json_inp['data'], json_inp['height'], json_inp['width'], 28, 28)
     fr.ShowImage(newImg, 28, 28)
     net = nn.NeuralNetwork([28 * 28, 51, 10], 0.2, [nn.RELU, nn.SIGMOID])
+    data = net.feed_forward(newImg)
     net.load_weights()
-    response = getNumberIndex(net.feed_forward(newImg))
-    return jsonify({"response": response})
+    response = getNumberIndex(data)
+    return jsonify({"response": response, "raw_data": data})
 if __name__ == '__main__':
     app.run(debug=True)

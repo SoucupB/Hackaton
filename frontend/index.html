@@ -63,9 +63,6 @@ epochs = 20
 net = nn.NeuralNetwork([imageHeight * imageWidth, 51, 10], 0.2, [nn.RELU, nn.SIGMOID])
 for i in range(20):
     print(i, net.sgdLong(images[:(50 * (i + 1))], labels[:(50 * (i + 1))], 10, nn.OPT_SGD))
-net.save_weights()
-print(net.feed_forward(images[4]))
-print(labels[4])
                 </code>
               </pre>
               <hr />
@@ -87,7 +84,7 @@ print(labels[4])
               <p></p>
               <textarea rows="20" cols="120" id = 'txtarea'>
 import NeuralNetwork as nn
-network = nn.NeuralNetwork([2, 4, 1], 0.1, [nn.RELU, nn.SIGMOID])
+network = nn.NeuralNetwork([2, 4, 1], 0.1, [nn.RELU, nn.SIGMOID]) # its a neural network with 2 input nodes 1 hidded layer and 4 nodes per that layer
 for index in range(5000):
     sr = [[0, 0], [0, 1], [1, 0], [1, 1]]
     pl = [[0], [1], [1], [0]]
@@ -109,9 +106,28 @@ for index in range(len(inputs)):
                 The framework is available only for Windows as it is right now and require the gcc > 7.1 compiler
                 and any Python 3.x version.
               </p>
-              <button class="button button3" onclick="">Download Code</button>
+              <script>
+                function download(filename, text) {
+                  var element = document.createElement('a');
+                  element.setAttribute('href', 'data:zip/plain;charset=utf-8,' + encodeURIComponent(text));
+                  element.setAttribute('download', filename);
+
+                  element.style.display = 'none';
+                  document.body.appendChild(element);
+
+                  element.click();
+
+                  document.body.removeChild(element);
+                  return false;
+                }
+              </script>
+              <button class="button button3" onclick="return download('NeuralNet.7z', 'hello')" id = "download-btn">Download Code</button>
+
+              <hr />
+              <p class="lead">
+                To install it just go in the folder directory and run ./build.bat and the library will be installed if the requirements are ready.
+              </p>
             </div>
         </div>
-
     </body>
 </html>
