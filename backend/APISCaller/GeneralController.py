@@ -10,7 +10,7 @@ app.config['SECRET_KEY'] = 'djfdhsgshuighyygtyftyftJHHGHGfdjsfidshgjushgusgh'
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 
-cors = CORS(app, resources={r"/code": {"origins": "http://localhost:5000"}})
+cors = CORS(app, resources={r"/code": {"origins": "http://localhost:4040"}})
 
 def extract_code(string):
     code = ""
@@ -60,4 +60,4 @@ def runMnistData():
     response = getNumberIndex(data)
     return jsonify({"response": response, "raw_data": data})
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host= '192.168.100.34', threaded=True, port=5000)
