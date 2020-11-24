@@ -3,7 +3,7 @@ var c;
 var imge = []
 var width;
 var height;
-var url = "http://localhost:5000/mnistPost.json";
+var url = "http://192.168.100.34:5000/mnistPost.json";
 
 function htmlToElement(html) {
     var template = document.createElement('template');
@@ -60,7 +60,7 @@ function mouseClicked() {
 }
 
 function executeCode() {
-    var newUrl = "http://localhost:5000/execute.json";
+    var newUrl = "http://192.168.100.34:5000/execute.json";
     var value = document.getElementById("txtarea").value.split("\n")
     console.log(value)
     document.getElementById("output").innerHTML = "Waiting!!";
